@@ -17,8 +17,8 @@ var user = {
 
 function restGearStart(gearPort) {
     restGear = gearApp.listen(gearPort, function () {
-    var port = restGear.address().port;
-    console.log("Rest Gear Service Listening on port: " + port);
+      var port = restGear.address().port;
+      console.log("Rest Gear Service Listening on port: " + port);
   });
 }
 
@@ -36,7 +36,7 @@ function restGearAddGet(app, restConf) {
   })  
 }
 
-function restGearInit(conf) {
+function init(conf) {
   var apps = conf.apps,
       appConf, appRestConf;
 
@@ -74,11 +74,11 @@ function restGearInit(conf) {
 
 
   // Start services
-  start(conf.port);
+  restGearStart(conf.port);
 }
 
 
-restGearAddGetInit(config);
+init(config);
 
 
 })();
