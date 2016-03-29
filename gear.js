@@ -77,8 +77,12 @@ gearApp.use(bodyParser.json()); // support json encoded bodies
 gearApp.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
-  gearApp.get('/restart', function (req, res) {
+  gearApp.get('/restGear-restart', function (req, res) {
     restGearRestart();
+  });
+
+    gearApp.get('/restGear-stop', function (req, res) {
+    restGearStop();
   });
 
   gearApp.post('/config/addAppConf', function(req, res) {
